@@ -1,15 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import Arrow from "@/assets/icon/arrow.svg";
+import Copyright from "@/assets/icon/copyright.svg"
+import LinkedIn from "@/assets/icon/linkedin.svg"
+import Instagram from "@/assets/icon/instagram.svg"
+import Youtube from "@/assets/icon/youtube.svg"
 
 export default function Home() {
-  // console.log()
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <div className="fixed left-0 top-0 flex w-full justify-between border-b border-gray-300 bg-gradient-to-b from-zinc-200 py-4 px-12 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit">
+        <div className="fixed left-0 top-0 flex w-full justify-between border-b border-[#D9E1E6] bg-[#F8FAFB] from-zinc-200 py-4 px-12 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit">
           <div className="flex items-center justify-start gap-x-8">
-            <div className="flex">
+            <Link href="/" className="flex justify-start gap-x-2">
               <Image
                 className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
                 src="/logo.svg"
@@ -26,34 +29,16 @@ export default function Home() {
                 height={20}
                 priority
               />
-            </div>
+            </Link>
             <div className="bg-[#ABBCC7] w-[2px] h-full" />
             <Link href="/">Home</Link>
             <Link href="/">Services</Link>
             <Link href="/">About Us</Link>
           </div>
-          <button className="flex justify-end items-center">
+          <button className="flex justify-end items-center gap-2 border border-[#5D5D5D] px-5 rounded-full">
             <p>Get Started</p>
-            <Image src={Arrow} alt="arrow"  className=""/>
+            <Image src={Arrow} alt="arrow" className="w-5" />
           </button>
-        </div>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
         </div>
       </div>
 
@@ -136,6 +121,73 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
+      </div>
+      <div className="w-full flex flex-col gap-y-24 bg-[#191919] px-48 pt-16 pb-12">
+        <div className="grid grid-cols-2 gap-x-10">
+          <div className="col-span-1 flex flex-col gap-y-4">
+            <div className="flex justify-start gap-x-2">
+              <Image
+                className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+                src="/logo.svg"
+                alt="Next.js Logo"
+                width={40}
+                height={20}
+                priority
+              />
+              <Image
+                className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+                src="/text.svg"
+                alt="Next.js Logo"
+                width={40}
+                height={20}
+                priority
+              />
+            </div>
+            <p className="text-[#E1E7EB] text-sm">
+              We committed to drive a sustainable energy future through
+              data-driven innovation. Our expertise lies in renewable energy
+              projects, data collection, data analysis, and comprehensive
+              consulting services.
+            </p>
+          </div>
+          <div className="col-span-1 flex justify-between">
+            <div className="flex flex-col justify-between">
+              <p className="text-[#E8EDF0] font-bold">Services</p>
+              <p className="text-[#5D5D5D]">Data Collections</p>
+              <p className="text-[#5D5D5D]">Data Insights</p>
+              <p className="text-[#5D5D5D]">Consultation</p>
+            </div>
+            <div className="flex flex-col justify-between">
+              <p className="text-[#E8EDF0] font-bold">Data Insight</p>
+              <p className="text-[#5D5D5D]">Water Level</p>
+              <p className="text-[#5D5D5D]">Wind Profile</p>
+              <p className="text-[#5D5D5D]">Solar Irradiance</p>
+            </div>
+            <div className="flex flex-col justify-between">
+              <p className="text-[#E8EDF0] font-bold">Company</p>
+              <p className="text-[#5D5D5D]">Home</p>
+              <p className="text-[#5D5D5D]">Services</p>
+              <p className="text-[#5D5D5D]">About Us</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-between items-center rounded-full px-8 py-4 bg-[#222222]">
+          <div className="flex text-[#E8EDF0] gap-x-1">
+            <p>Copyright</p>
+            <Image src={Copyright} alt="copyright"/>
+            <p>2023 Edge</p>
+          </div>
+          <div className="flex text-[#5D5D5D] justify-between gap-x-6">
+            <p>Attributions:</p>
+            <p>Image by Macrovector</p>
+            <p>Image by Freepik</p>
+          </div>
+          <div className="flex justify-end gap-x-4">
+            <Image src={LinkedIn} alt="linkedin"/>
+            <Image src={Instagram} alt="instagram"/>
+            <Image src={Youtube} alt="youtube"/>
+          </div>
+        </div>
       </div>
     </main>
   );
