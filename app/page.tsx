@@ -9,6 +9,9 @@ import Data from "@/assets/icon/data.svg";
 import Analytic from "@/assets/icon/analytic.svg";
 import Consulting from "@/assets/icon/consulting.svg";
 import OurMissionBG from "@/assets/img/our_mission.svg";
+import Image1 from "@/assets/img/image1.svg";
+import Windmill from "@/assets/img/windmill.svg";
+import Soundwave from "@/assets/img/soundwave.svg";
 import { Mohave } from "next/font/google";
 
 const MOHAVE_FONT = Mohave({
@@ -61,20 +64,20 @@ export default function Home() {
           priority
         />
       </div> */}
-      <div className="h-max w-full grid grid-rows-[10] grid-cols-4 px-20 pt-20 pb-40 bg-[#F2F4F6]">
-        <div className="row-span-1 col-start-1 col-end-3 flex justify-start items-center gap-x-2">
+      <div className="relative h-max w-full grid grid-rows-[10] grid-cols-4 px-20 pt-20 pb-96 bg-[#F2F4F6]">
+        <div className="row-span-1 col-start-1 col-end-3 flex justify-start items-center gap-x-2 z-10">
           <div className="w-10 h-[1px] bg-black" />
           <p className="font-light text-black">HOME</p>
         </div>
         <div
-          className={`row-span-3 col-start-1 col-end-3 flex flex-col justify-start gap-y-6 ${MOHAVE_FONT.className}`}
+          className={`row-span-3 col-start-1 col-end-3 flex flex-col justify-start gap-y-6 ${MOHAVE_FONT.className} z-10`}
         >
           <p className="text-5xl">Empowering the Future of</p>
           <p className="text-5xl font-semibold bg-gradient-to-r from-[#0071AA] to-[#4BBC53] text-transparent bg-clip-text">
             Renewable Energy.
           </p>
         </div>
-        <div className="row-span-5 col-start-1 col-end-3">
+        <div className="row-span-5 col-start-1 col-end-3 z-10">
           <p>
             We&apos;re an independent advisory firm specializing in renewable
             energy projects, data collection, data analytics, and comprehensive
@@ -82,7 +85,7 @@ export default function Home() {
             decision-making.
           </p>
         </div>
-        <div className="row-span-1 col-start-1 col-end-3 flex justify-between">
+        <div className="row-span-1 col-start-1 col-end-3 flex justify-between z-10">
           <div className="flex justify-between items-center gap-x-4">
             <Image src={Data} alt="data" />
             <p className="text-[#2A2A2A] text-lg">Data Insight</p>
@@ -99,7 +102,7 @@ export default function Home() {
             <Image className="w-7" src={Arrow} alt="arrow" />
           </div>
         </div>
-        <div className="row-start-1 row-end-[11] col-start-4 col-end-5 flex flex-col justify-between gap-y-8">
+        <div className="row-start-1 row-end-[11] col-start-4 col-end-5 flex flex-col justify-between gap-y-8 z-10">
           <div className="flex flex-col justify-between items-start gap-y-3">
             <button className="border border-[#4BBC53] rounded-full px-6 py-1 text-base">
               Solar Irradiance
@@ -133,10 +136,68 @@ export default function Home() {
             </p>
           </div>
         </div>
+        <Image
+          src={Soundwave}
+          alt="soundwave"
+          className="absolute bottom-[8%] w-full"
+        />
+        <Image
+          src={Windmill}
+          alt="windmill"
+          className="absolute bottom-[10%] right-[30%]"
+        />
       </div>
-      <div className="h-max w-full flex flex-col justify-between items-center gap-y-24 px-20 py-10 bg-[#222222]">
-        <div className="relative w-full"></div>
-        <div className="flex justify-between items-start gap-x-16">
+
+      <div className="relative h-max w-full flex flex-col justify-between items-center gap-y-40 px-20 py-10 bg-[#222222]">
+        <div className="absolute top-[-10rem] flex justify-between gap-x-4 w-full px-20">
+          <div className="w-[32%] flex flex-col items-center justify-start bg-[#FCFCFD]">
+            <Image className="w-full" src={Image1} alt="image1" />
+            <div className="flex flex-col justify-between items-center gap-y-4 text-center px-8 py-12">
+              <p
+                className={`${MOHAVE_FONT.className} font-semibold text-2xl text-[#333333]`}
+              >
+                Smart Transition to Renewable Energy
+              </p>
+              <p className="text-[#3B3B3B]">
+                Lead the way in transitioning to intelligent renewable energy.
+                We utilize data to ensure that the shift to renewable energy is
+                not only efficient but also environmentally friendly.
+              </p>
+            </div>
+          </div>
+          <div className="w-[32%] flex flex-col items-center justify-start bg-[#FCFCFD]">
+            <Image className="w-full" src={Image1} alt="image1" />
+            <div className="flex flex-col justify-between items-center gap-y-4 text-center px-8 py-12">
+              <p
+                className={`${MOHAVE_FONT.className} font-semibold text-2xl text-[#333333]`}
+              >
+                Tailored Insights for B2B and B2G Collaboration
+              </p>
+              <p className="text-[#3B3B3B]">
+                Our expert team delves deep into data to provide insights
+                tailored to your specific goals, whether you are a government
+                partner or a private company.
+              </p>
+            </div>
+          </div>
+          <div className="w-[32%] flex flex-col items-center justify-start bg-[#FCFCFD]">
+            <Image className="w-full" src={Image1} alt="image1" />
+            <div className="flex flex-col justify-between items-center gap-y-4 text-center px-8 py-12">
+              <p
+                className={`${MOHAVE_FONT.className} font-semibold text-2xl text-[#333333]`}
+              >
+                Data Analysis for Informed Decisions
+              </p>
+              <p className="text-[#3B3B3B]">
+                Data is more than numbers. We use cutting-edge data analysis to
+                ensure that your renewable energy projects are not only
+                beneficial for the environment but also for your business.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-between items-start gap-x-16 pt-20 mt-96">
           <p
             className={`${MOHAVE_FONT.className} font-semibold text-[#D9E1E6] text-4xl`}
           >
@@ -186,8 +247,13 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="relative w-full flex flex-col justify-center gap-y-8 items-center bg-[#181818A6] px-56 pt-20 pb-14 opacity-[0.65] border border-[#3B3B3B] rounded-lg">
-          <Image className="absolute w-full top-0" src={OurMissionBG} alt="alt"/>
+
+        <div className="relative w-full flex flex-col justify-center items-center bg-[#181818A6] px-56 pt-20 pb-14 opacity-[0.65] border border-[#3B3B3B] rounded-lg">
+          <Image
+            className="absolute w-full top-0"
+            src={OurMissionBG}
+            alt="alt"
+          />
           <p
             className={`${MOHAVE_FONT.className} font-semibold text-4xl text-[#D9E1E6]`}
           >
