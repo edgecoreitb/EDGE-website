@@ -8,18 +8,23 @@ import Youtube from "@/assets/icon/youtube.svg";
 import Data from "@/assets/icon/data.svg";
 import Analytic from "@/assets/icon/analytic.svg";
 import Consulting from "@/assets/icon/consulting.svg";
+import OurMissionBG from "@/assets/img/our_mission.svg";
 import { Mohave } from "next/font/google";
 
-const MOHAVE_FONT = Mohave({ weight: ["400", "600"], subsets: ["latin"] });
+const MOHAVE_FONT = Mohave({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <div className="left-0 top-0 flex w-full justify-between border-b border-[#D9E1E6] bg-[#F8FAFB] from-zinc-200 py-4 px-12 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit">
+      <div className="left-0 top-0 flex w-full justify-between border-b border-[#D9E1E6] bg-[#F8FAFB] from-zinc-200 py-4 px-12 backdrop-blur-2xl">
         <div className="flex items-center justify-start gap-x-8">
           <Link href="/" className="flex justify-start gap-x-2">
             <Image
-              className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+              className="relative"
               src="/logo.svg"
               alt="Next.js Logo"
               width={40}
@@ -27,7 +32,7 @@ export default function Home() {
               priority
             />
             <Image
-              className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+              className="relative"
               src="/text.svg"
               alt="Next.js Logo"
               width={40}
@@ -56,7 +61,7 @@ export default function Home() {
           priority
         />
       </div> */}
-      <div className="h-max w-full grid grid-rows-[10] grid-cols-4 px-20 pt-20 pb-40">
+      <div className="h-max w-full grid grid-rows-[10] grid-cols-4 px-20 pt-20 pb-40 bg-[#F2F4F6]">
         <div className="row-span-1 col-start-1 col-end-3 flex justify-start items-center gap-x-2">
           <div className="w-10 h-[1px] bg-black" />
           <p className="font-light text-black">HOME</p>
@@ -129,13 +134,82 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="h-max w-full flex flex-col justify-between items-center gap-y-24 px-20 py-10 bg-[#222222]">
+        <div className="relative w-full"></div>
+        <div className="flex justify-between items-start gap-x-16">
+          <p
+            className={`${MOHAVE_FONT.className} font-semibold text-[#D9E1E6] text-4xl`}
+          >
+            Data-Driven, Future-Ready: Your Energy Revolution Starts Here.
+          </p>
+          <div className="flex flex-col justify-between items-start gap-y-4">
+            <div className="flex items-stretch justify-between gap-x-4">
+              <div className="w-1 bg-gradient-to-b from-[#0273A8] to-[#49BA56]" />
+              <div>
+                <p
+                  className={`${MOHAVE_FONT.className} font-semibold text-[#F7F8F9] text-xl`}
+                >
+                  Sustainable Solutions
+                </p>
+                <p
+                  className={`${MOHAVE_FONT.className} text-[#D9E1E6] text-xl italic`}
+                >
+                  Transforming Ambition into Action
+                </p>
+              </div>
+            </div>
+            <p className="text-[#D9E1E6]">
+              Unleash the potential of your renewable energy projects with our
+              seamless and expert solutions.
+            </p>
+          </div>
+          <div className="flex flex-col justify-between items-start gap-y-4">
+            <div className="flex items-stretch justify-between gap-x-4">
+              <div className="w-1 bg-gradient-to-b from-[#0273A8] to-[#49BA56]" />
+              <div>
+                <p
+                  className={`${MOHAVE_FONT.className} font-semibold text-[#F7F8F9] text-xl`}
+                >
+                  Insightful Data, Informed Choices
+                </p>
+                <p
+                  className={`${MOHAVE_FONT.className} text-[#D9E1E6] text-xl italic`}
+                >
+                  Closing Gaps, Unlocking Potential
+                </p>
+              </div>
+            </div>
+            <p className="text-[#D9E1E6]">
+              Navigate the renewable energy landscape with precision. Our
+              insights bridge strategy gaps, ensuring efficiency and informed
+              decisions.
+            </p>
+          </div>
+        </div>
+        <div className="relative w-full flex flex-col justify-center gap-y-8 items-center bg-[#181818A6] px-56 pt-20 pb-14 opacity-[0.65] border border-[#3B3B3B] rounded-lg">
+          <Image className="absolute w-full top-0" src={OurMissionBG} alt="alt"/>
+          <p
+            className={`${MOHAVE_FONT.className} font-semibold text-4xl text-[#D9E1E6]`}
+          >
+            OUR MISSION
+          </p>
+          <p className="text-center text-2xl text-[#BAC8D1]">
+            We envision a world where renewable energy is a lasting legacy.
+            Using data, we&apos;re revolutionizing sustainable solutions to
+            endure for generations. Our focus is maximizing renewable energy
+            potential in Indonesia.
+          </p>
+        </div>
+        <div></div>
+        <div></div>
+      </div>
 
       <div className="w-full flex flex-col gap-y-24 bg-[#191919] px-48 pt-16 pb-12">
         <div className="grid grid-cols-2 gap-x-10">
           <div className="col-span-1 flex flex-col gap-y-4">
             <div className="flex justify-start gap-x-2">
               <Image
-                className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+                className="relative"
                 src="/logo.svg"
                 alt="Next.js Logo"
                 width={40}
@@ -143,7 +217,7 @@ export default function Home() {
                 priority
               />
               <Image
-                className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+                className="relative"
                 src="/text.svg"
                 alt="Next.js Logo"
                 width={40}
