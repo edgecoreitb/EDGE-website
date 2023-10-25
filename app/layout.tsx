@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans_Condensed } from "next/font/google";
 import "./globals.css";
 
-const DEFAULT_FONT = IBM_Plex_Sans_Condensed({ weight: ["300", "400", "700"], subsets: ["latin"]});
+const DEFAULT_FONT = IBM_Plex_Sans_Condensed({ weight: ["300", "400", "500", "700"], subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "EDGE Core ITB",
