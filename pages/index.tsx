@@ -21,13 +21,8 @@ import Plant from "@/assets/icon/plant.svg";
 import Lamp from "@/assets/icon/lamp.svg";
 import Recycle from "@/assets/icon/recycle.svg";
 import Forest from "@/assets/img/forest.svg";
-import { Mohave } from "next/font/google";
+import { MOHAVE_FONT } from "@/styles/fonts";
 
-const MOHAVE_FONT = Mohave({
-  weight: ["400", "600", "700"],
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-});
 export default function Home() {
   return (
     <>
