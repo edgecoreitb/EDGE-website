@@ -13,7 +13,7 @@ export const MOHAVE_FONT = Mohave({
 });
 
 export const INTER_FONT = Inter({
-  weight: ["300", "400"],
+  weight: ["300", "400", "800"],
   subsets: ["latin"],
   style: ["normal"],
 });
