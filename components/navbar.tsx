@@ -30,10 +30,10 @@ export default function Navbar(){
           <Link href="/services">Services</Link>
           <Link href="/">About Us</Link>
         </div>
-        <button className="flex justify-end items-center gap-2 border border-[#5D5D5D] px-5 rounded-full">
+        <Link href="/get-started" className="flex justify-end items-center gap-2 border border-[#5D5D5D] px-5 rounded-full">
           <p>Get Started</p>
           <Image src={Arrow} alt="arrow" className="w-5" />
-        </button>
+        </Link>
       </div>
     )
 }
