@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import Image1 from "@/assets/img/service-image1.webp";
-import Image2 from "@/assets/img/service-image2.svg";
-import Image3 from "@/assets/img/service-image3.svg";
+import Image1 from "@/assets/img/service-image1.jpeg";
+import Image2 from "@/assets/img/service-image2.jpeg";
+import Image3 from "@/assets/img/service-image3.jpeg";
 import Soundwave from "@/assets/img/service-soundwave.svg";
 import Underline from "@/assets/img/service-underline.svg";
 import Dashedline from "@/assets/img/line.svg";
@@ -52,9 +52,9 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-8 z-10">
-          <div className="row-start-1 row-end-3 col-start-1 col-end-2 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col gap-y-12 border border-[#BAC8D1]">
+          <div className="row-start-1 row-end-3 col-start-1 col-end-2 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col justify-between gap-y-12 border border-[#BAC8D1]">
             <div className="flex flex-col items-start gap-y-8">
-              <Image className="w-full" src={Image1} alt="image1" />
+              <Image className="w-full rounded-md" src={Image1} alt="image1" />
               <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
                 Data Insight
               </button>
@@ -75,7 +75,7 @@ export default function Services() {
           </div>
           <div className="row-start-1 row-end-2 col-start-2 col-end-3 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col gap-y-12 border border-[#BAC8D1]">
             <div className="flex gap-x-6">
-              <Image className="w-full" src={Image2} alt="image2" />
+              <Image className="w-full rounded-md" src={Image2} alt="image2" />
               <div className="flex flex-col items-start justify-between">
                 <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
                   Analytics

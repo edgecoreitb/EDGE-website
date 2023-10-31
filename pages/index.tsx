@@ -5,10 +5,10 @@ import Data from "@/assets/icon/data.svg";
 import Analytic from "@/assets/icon/analytic.svg";
 import Consulting from "@/assets/icon/consulting.svg";
 import OurMissionBG from "@/assets/img/our_mission.svg";
-import Image1 from "@/assets/img/image1.svg";
-import Image2 from "@/assets/img/image2.svg";
-import Image3 from "@/assets/img/image3.svg";
-import Image4 from "@/assets/img/image4.svg";
+import Image1 from "@/assets/img/image1.jpeg";
+import Image2 from "@/assets/img/image2.jpeg";
+import Image3 from "@/assets/img/image3.jpeg";
+import Image4 from "@/assets/img/image4.jpeg";
 import Line from "@/assets/img/line.svg";
 import Windmill from "@/assets/img/windmill.svg";
 import Soundwave from "@/assets/img/soundwave.svg";
@@ -376,7 +376,7 @@ export default function Home() {
             </div>
           </div>
           <div className="col-span-1 flex justify-end">
-            <Image className="h-full" src={Image4} alt="image4" />
+            <Image className="w-full rounded-xl" src={Image4} alt="image4" />
           </div>
         </div>
       </div>
