@@ -22,10 +22,14 @@ import Lamp from "@/assets/icon/lamp.svg";
 import Recycle from "@/assets/icon/recycle.svg";
 import Forest from "@/assets/img/forest.svg";
 import { MOHAVE_FONT } from "@/styles/fonts";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Home | EDGE, Your Future Energy Solution!</title>
+      </Head>
       <div className="relative h-max w-full grid grid-rows-[10] grid-cols-4 px-20 pt-20 pb-96 bg-[#F2F4F6]">
         <div className="row-span-1 col-start-1 col-end-3 flex justify-start items-center gap-x-2 z-10">
           <div className="w-10 h-[1px] bg-black" />

@@ -3,12 +3,20 @@ import Image from "next/image";
 import CallIcon from "@/assets/icon/call.svg";
 import MailIcon from "@/assets/icon/mail.svg";
 import BG from "@/assets/img/get-started-bg.svg";
+import Head from "next/head";
 
 export default function GetStarted() {
   return (
     <>
+      <Head>
+        <title>Get Started | EDGE, Your Future Energy Solution!</title>
+      </Head>
       <div className="relative w-full h-max bg-[#F2F4F6] flex px-20 pt-12 pb-32 gap-y-20">
-        <Image className="absolute h-full  top-0 left-0 object-fill" src={BG} alt="background"/>
+        <Image
+          className="absolute h-full  top-0 left-0 object-fill"
+          src={BG}
+          alt="background"
+        />
         <div className="bg-[#FAFBFC] w-[50%] flex flex-col py-6 px-12 border border-[#B3C2CC] rounded-2xl z-10">
           <div className="flex items-center justify-start gap-x-2">
             <div className="border-t border-black h-0 w-12" />

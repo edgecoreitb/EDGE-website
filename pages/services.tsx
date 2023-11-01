@@ -10,6 +10,7 @@ import RectangleR from "@/assets/img/rectangle-right.svg";
 import RectangleL from "@/assets/img/rectangle-left.svg";
 import Forest from "@/assets/img/forest.svg";
 import { MOHAVE_FONT } from "@/styles/fonts";
+import Head from "next/head";
 
 const INTER_FONT = Inter({
   subsets: ["latin"],
@@ -20,6 +21,9 @@ const INTER_FONT = Inter({
 export default function Services() {
   return (
     <>
+      <Head>
+        <title>Services | EDGE, Your Future Energy Solution!</title>
+      </Head>
       <div className="relative w-full bg-[#F2F4F6] flex flex-col px-20 pt-12 pb-32 gap-y-20">
         <Image
           className="absolute w-full top-[15%] left-0"

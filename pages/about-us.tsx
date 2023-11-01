@@ -15,10 +15,14 @@ import OurValues from "@/assets/img/our_values.svg";
 import Profile from "@/assets/img/about-us-image-12.jpeg";
 import Forest from "@/assets/img/forest.svg";
 import { INTER_FONT, MOHAVE_FONT } from "@/styles/fonts";
+import Head from "next/head";
 
 export default function AboutUs() {
   return (
     <>
+      <Head>
+        <title>About Us | EDGE, Your Future Energy Solution!</title>
+      </Head>
       <div className="bg-[#F2F4F6] w-full flex justify-between gap-x-4">
         <Image className="w-[17.5%] h-auto" src={Image1} alt="image1" />
         <Image className="w-[17.5%] h-auto" src={Image2} alt="image2" />
