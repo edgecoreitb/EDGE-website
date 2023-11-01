@@ -123,7 +123,7 @@ export default function Services() {
           </div>
         </div>
       </div>
-      <div className="relative w-full bg-[#E1E7EB] flex flex-col px-20 pt-28 pb-32 gap-y-32">
+      <div className="relative w-full overflow-hidden bg-[#E1E7EB] flex flex-col px-20 pt-28 pb-32 gap-y-32">
         <Image
           className="absolute top-0 -left-52"
           src={RectangleL}
