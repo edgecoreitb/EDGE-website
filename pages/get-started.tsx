@@ -17,7 +17,12 @@ export default function GetStarted() {
           src={BG}
           alt="background"
         />
-        <div className="bg-[#FAFBFC] w-[50%] flex flex-col py-6 px-12 border border-[#B3C2CC] rounded-2xl z-10">
+        <form
+          className="bg-[#FAFBFC] w-[50%] flex flex-col py-6 px-12 border border-[#B3C2CC] rounded-2xl z-10"
+          id="get-started"
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbzQrQcDDkuf0gYbC62NDQ2gMMlyY3FLupXDgVqEJrbXPMfshducYYNsSS5ftKXHslK67A/exec"
+        >
           <div className="flex items-center justify-start gap-x-2">
             <div className="border-t border-black h-0 w-12" />
             <p className={`${INTER_FONT.className} font-light text-base`}>
@@ -41,40 +46,76 @@ export default function GetStarted() {
             <div className="flex justify-between">
               <div className="flex flex-col w-[47.5%] gap-y-1">
                 <label>First Name: *</label>
-                <input className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3" />
+                <input
+                  className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3"
+                  name="First Name"
+                  required
+                />
               </div>
               <div className="flex flex-col w-[47.5%] gap-y-1">
                 <label>Last Name: *</label>
-                <input className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3" />
+                <input
+                  className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3"
+                  name="Last Name"
+                  required
+                />
               </div>
             </div>
             <div className="flex justify-between">
               <div className="flex flex-col w-[47.5%] gap-y-1">
                 <label>Email Address: *</label>
-                <input className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3" />
+                <input
+                  className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3"
+                  name="Email Address"
+                  required
+                />
               </div>
               <div className="flex flex-col w-[47.5%] gap-y-1">
                 <label>Job Title: *</label>
-                <input className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3" />
+                <input
+                  className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3"
+                  name="Job Title"
+                  required
+                />
               </div>
             </div>
             <div className="flex justify-between">
               <div className="flex flex-col w-[47.5%] gap-y-1">
                 <label>Company Name: *</label>
-                <input className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3" />
+                <input
+                  className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3"
+                  name="Company Name"
+                  required
+                />
               </div>
               <div className="flex flex-col w-[47.5%] gap-y-1">
                 <label>Service: *</label>
-                <input className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3" />
+                <select
+                  className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3 bg-[url(/select-arrow.svg)] appearance-none bg-no-repeat bg-[right_0.7rem_top_50%]"
+                  name="Services"
+                  form="get-started"
+                >
+                  <option value="Data Insight">Data Insight</option>
+                  <option value="Analytics">Analytics</option>
+                  <option value="Consulting">Consulting</option>
+                </select>
               </div>
             </div>
             <div className="flex flex-col w-full gap-y-1">
               <label>Contact Number: *</label>
-              <input className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3" />
+              <input
+                className="border border-[#6B7B8D] rounded-[0.25rem] py-[0.375rem] px-3"
+                name="Contact Number"
+                required
+              />
             </div>
             <div className="flex flex-col w-full gap-y-1">
               <label>Type your Message Here: *</label>
-              <textarea className="border border-[#6B7B8D] h-40 rounded-[0.25rem] py-[0.375rem] px-3" />
+              <textarea
+                className="border border-[#6B7B8D] h-40 rounded-[0.25rem] py-[0.375rem] px-3"
+                name="Messages"
+                required
+              />
             </div>
           </div>
           <div className="flex flex-col items-start justify-center  pt-6 gap-y-8">
@@ -83,11 +124,14 @@ export default function GetStarted() {
               your personal data as per our Privacy Statement. We will never
               sell your personal information to any third party.
             </p>
-            <button className="bg-[#318337] text-white rounded py-3 px-4">
+            <button
+              type="submit"
+              className="bg-[#318337] text-white rounded py-3 px-4"
+            >
               Contact Us
             </button>
           </div>
-        </div>
+        </form>
         <div className="w-[50%] flex flex-col px-20 gap-y-8 z-10">
           <p
             className={`${MOHAVE_FONT.className} text-3xl text-[#292F36] font-bold`}
