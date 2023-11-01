@@ -44,7 +44,7 @@ export default function Home() {
           </p>
         </div>
         <div className="row-span-5 col-start-1 col-end-3 z-10">
-          <p>
+          <p className="max-w-[75%]">
             We&apos;re an independent advisory firm specializing in renewable
             energy projects, data collection, data analytics, and comprehensive
             consulting—empowering you with crucial insights for better
