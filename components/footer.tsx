@@ -4,6 +4,7 @@ import Copyright from "@/assets/icon/copyright.svg";
 import LinkedIn from "@/assets/icon/linkedin.svg";
 import Instagram from "@/assets/icon/instagram.svg";
 import Youtube from "@/assets/icon/youtube.svg";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -37,22 +38,44 @@ export default function Footer() {
         </div>
         <div className="col-span-1 flex justify-between">
           <div className="flex flex-col justify-between">
-            <p className="text-[#E8EDF0] font-bold">Services</p>
-            <p className="text-[#5D5D5D]">Data Collections</p>
-            <p className="text-[#5D5D5D]">Data Insights</p>
-            <p className="text-[#5D5D5D]">Consultation</p>
+            <Link href="#" className="text-[#E8EDF0] font-bold">
+              Services
+            </Link>
+            <Link href="#" className="text-[#5D5D5D]">
+              Data Collections
+            </Link>
+            <Link href="#" className="text-[#5D5D5D]">
+              Data Insights
+            </Link>
+            <Link href="#" className="text-[#5D5D5D]">
+              Consultation
+            </Link>
           </div>
           <div className="flex flex-col justify-between">
-            <p className="text-[#E8EDF0] font-bold">Data Insight</p>
-            <p className="text-[#5D5D5D]">Water Level</p>
-            <p className="text-[#5D5D5D]">Wind Profile</p>
-            <p className="text-[#5D5D5D]">Solar Irradiance</p>
+            <Link href="#" className="text-[#E8EDF0] font-bold">
+              Data Insight
+            </Link>
+            <Link href="#" className="text-[#5D5D5D]">
+              Water Level
+            </Link>
+            <Link href="#" className="text-[#5D5D5D]">
+              Wind Profile
+            </Link>
+            <Link href="#" className="text-[#5D5D5D]">
+              Solar Irradiance
+            </Link>
           </div>
           <div className="flex flex-col justify-between">
             <p className="text-[#E8EDF0] font-bold">Company</p>
-            <p className="text-[#5D5D5D]">Home</p>
-            <p className="text-[#5D5D5D]">Services</p>
-            <p className="text-[#5D5D5D]">About Us</p>
+            <Link href="/" className="text-[#5D5D5D]">
+              Home
+            </Link>
+            <Link href="/services" className="text-[#5D5D5D]">
+              Services
+            </Link>
+            <Link href="/about-us" className="text-[#5D5D5D]">
+              About Us
+            </Link>
           </div>
         </div>
       </div>
@@ -64,8 +87,12 @@ export default function Footer() {
         </div>
         <div className="flex text-[#5D5D5D] justify-between gap-x-6">
           <p>Attributions:</p>
-          <p>Image by Macrovector</p>
-          <p>Image by Freepik</p>
+          <a href="https://www.freepik.com/free-vector/smart-industry-icon_23182676.htm#query=3d%20windmill&position=16&from_view=keyword&track=ais">
+            Image by Macrovector
+          </a>
+          <a href="https://www.freepik.com/free-vector/pack-different-green-trees_1047208.htm#query=green%20trees%20illustratore&position=5&from_view=search&track=ais">
+            Image by Freepik
+          </a>
         </div>
         <div className="flex justify-end gap-x-4">
           <Image src={LinkedIn} alt="linkedin" />
