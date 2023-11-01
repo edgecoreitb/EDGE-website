@@ -58,7 +58,7 @@ export default function Services() {
         <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-8 z-10">
           <div className="row-start-1 row-end-3 col-start-1 col-end-2 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col justify-between gap-y-12 border border-[#BAC8D1]">
             <div className="flex flex-col items-start gap-y-8">
-              <Image className="w-full rounded-md" src={Image1} alt="image1" />
+              <Image className="w-full max-w-xl rounded-md" src={Image1} alt="image1" />
               <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
                 Data Insight
               </button>
@@ -79,7 +79,7 @@ export default function Services() {
           </div>
           <div className="row-start-1 row-end-2 col-start-2 col-end-3 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col gap-y-12 border border-[#BAC8D1]">
             <div className="flex gap-x-6">
-              <Image className="w-full rounded-md" src={Image2} alt="image2" />
+              <Image className="w-full max-w-[15rem] rounded-md" src={Image2} alt="image2" />
               <div className="flex flex-col items-start justify-between">
                 <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
                   Analytics
@@ -101,7 +101,7 @@ export default function Services() {
           </div>
           <div className="row-start-2 row-end-3 col-start-2 col-end-3 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col gap-y-12 border border-[#BAC8D1]">
             <div className="flex gap-x-6">
-              <Image className="w-full" src={Image3} alt="image2" />
+              <Image className="w-full max-w-[15rem]" src={Image3} alt="image2" />
               <div className="flex flex-col items-start justify-between">
                 <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
                   Consulting
