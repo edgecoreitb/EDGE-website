@@ -15,6 +15,7 @@ import ReadyIcon from "@/assets/icon/ready.svg";
 import OnProgressIcon from "@/assets/icon/progress.svg";
 import { INTER_FONT, MOHAVE_FONT } from "@/styles/fonts";
 import Head from "next/head";
+import { ChangeEvent, useState } from "react";
 
 const SERVICES_DATA = [
   {
@@ -143,6 +144,28 @@ const toRupiah = (number: number) => {
 };
 
 export default function Services() {
+  const [showed, setShowed] = useState(SERVICES_DATA);
+
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value == "") {
+      setShowed(SERVICES_DATA);
+    } else {
+      setShowed(
+        SERVICES_DATA.filter((data) =>
+          data.pill.toLowerCase().includes(e.target.value)
+        )
+      );
+    }
+  };
+
+  const handleFilter = (e: ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value == "") {
+      setShowed(SERVICES_DATA);
+    } else {
+      setShowed(SERVICES_DATA.filter((data) => data.status == e.target.value));
+    }
+  };
+
   return (
     <>
       <Head>
@@ -276,11 +299,15 @@ export default function Services() {
             <input
               className="bg-transparent italic focus:not-italic outline-none text-[#A3B6C2] w-60"
               placeholder="Search what you're looking for here"
+              onChange={handleSearch}
             />
           </div>
           <div className="flex border-b pb-2">
             <Image src={FilterList} alt="filterList" />
-            <select className="bg-transparent outline-none min-w-[6rem] text-[#A3B6C2]">
+            <select
+              className="bg-transparent outline-none min-w-[6rem] text-[#A3B6C2]"
+              onChange={handleFilter}
+            >
               <option value=""></option>
               <option value="ready">Ready</option>
               <option value="onprogress">Onprogress</option>
@@ -289,27 +316,21 @@ export default function Services() {
         </div>
       </div>
       <div className="w-full bg-[#F2F4F6] grid grid-cols-3 gap-6 p-20">
-        {SERVICES_DATA.map((data) => (
+        {showed.map((data) => (
           <div
             key={`${data.pill}-${data.status}`}
-            className="w-full flex flex-col gap-y-4 col-span-1 bg-[#E8EDF0] border border-[#BAC8D1] rounded-md p-4"
+            className="w-full flex flex-col gap-y-4 col-span-1 bg-[#E8EDF0] border border-[#BAC8D1] rounded-md p-4 transition ease-in-out delay-100 hover:scale-105 hover:shadow hover:border-[#4C4C4C] duration-300 cursor-pointer"
           >
             <div className="flex justify-between">
               <p
                 className={`${
-                  data.type == "package"
-                    ? "bg-[#CCC1F2]"
-                    : "bg-transparent"
+                  data.type == "package" ? "bg-[#CCC1F2]" : "bg-transparent"
                 } font-bold text-lg rounded-full px-6 py-1`}
               >
                 {data.pill}
               </p>
               <Image
-                src={
-                  data.status == "ready"
-                    ? ReadyIcon
-                    : OnProgressIcon
-                }
+                src={data.status == "ready" ? ReadyIcon : OnProgressIcon}
                 alt="status_logo"
               />
             </div>
