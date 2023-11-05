@@ -13,6 +13,7 @@ import MagnifierIcon from "@/assets/icon/material-symbols-light_search.svg";
 import FilterList from "@/assets/icon/filter_list.svg";
 import ReadyIcon from "@/assets/icon/ready.svg";
 import OnProgressIcon from "@/assets/icon/progress.svg";
+import ArrowDropDown from "@/assets/icon/arrow_drop_down.svg";
 import { INTER_FONT, MOHAVE_FONT } from "@/styles/fonts";
 import Head from "next/head";
 import { ChangeEvent, useState } from "react";
@@ -146,6 +147,7 @@ const toRupiah = (number: number) => {
 
 export default function Services() {
   const [showed, setShowed] = useState(SERVICES_DATA);
+  const [details, setDetails] = useState(false);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value == "") {
@@ -318,33 +320,64 @@ export default function Services() {
       </div>
       <div className="w-full bg-[#F2F4F6] grid grid-cols-3 gap-6 p-20">
         {showed.map((data) => (
-          <Link
-          href={{
-            pathname: 'get-started',
-            query: {
-              item: data.pill
-            }
-          }}
+          <div
             key={`${data.pill}-${data.status}`}
-            className="w-full flex flex-col gap-y-4 col-span-1 bg-[#E8EDF0] border border-[#BAC8D1] rounded-md p-4 transition ease-in-out delay-100 hover:scale-105 hover:shadow hover:border-[#4C4C4C] duration-300 cursor-pointer"
+            className="w-full flex flex-col gap-y-4 col-span-1 bg-[#E8EDF0] border border-[#BAC8D1] rounded-md p-4 transition ease-in-out delay-100 hover:scale-105 hover:shadow hover:border-[#4C4C4C] duration-300"
           >
             <div className="flex justify-between">
-              <p
-                className={`${
-                  data.type == "package" ? "bg-[#CCC1F2]" : "bg-transparent"
-                } font-bold text-lg rounded-full px-6 py-1`}
-              >
-                {data.pill}
-              </p>
+              {data.type == "package" ? (
+                <p className="bg-[#CCC1F2] font-bold text-lg rounded-full px-6 py-1">
+                  {data.pill}
+                </p>
+              ) : (
+                <div className="bg-gradient-to-r from-[#0071AA] to-[#4BBC53] py-[4px] px-[1px] rounded-full">
+                  <span className="h-full w-full bg-[#F2F4F6] px-6 py-1 rounded-full">
+                    {data.pill}
+                  </span>
+                </div>
+              )}
               <Image
                 src={data.status == "ready" ? ReadyIcon : OnProgressIcon}
                 alt="status_logo"
               />
             </div>
-            <Image src={Image4} className="w-full rounded-lg" alt="image" />
+            <Link
+              href={{
+                pathname: "get-started",
+                query: {
+                  item: data.pill,
+                },
+              }}
+            >
+              <Image
+                src={Image4}
+                className="w-full rounded-lg cursor-pointer"
+                alt="image"
+              />
+            </Link>
             <div className="flex text-lg gap-x-6">
               {data.type == "package" ? (
-                <div>Datasets: {data.datasets?.length}</div>
+                <button
+                  className="relative flex items-center z-10 group"
+                  type="button"
+                  onFocus={() => setDetails(true)}
+                  onBlur={() => setDetails(false)}
+                >
+                  <p>Datasets: {data.datasets?.length}</p>
+                  <Image src={ArrowDropDown} alt="dropdown icon" />
+                  <div className="absolute top-0 flex-col group-focus:block hidden border border-[#233D4D] rounded-lg shadow">
+                    {data.datasets?.map((dataset, idx) => (
+                      <p
+                        className={`bg-white w-60 text-left border-b border-[#9CB0BD] p-2 ${
+                          idx == 0 && "rounded-t-lg"
+                        } ${idx == data.datasets.length - 1 && "rounded-b-lg"}`}
+                        key={dataset}
+                      >
+                        {dataset}
+                      </p>
+                    ))}
+                  </div>
+                </button>
               ) : (
                 <div>Rows: {data.rows_number}</div>
               )}
@@ -358,7 +391,7 @@ export default function Services() {
               {data.title}
             </p>
             <p>{data.description}</p>
-          </Link>
+          </div>
         ))}
       </div>
       <div className="relative w-full overflow-hidden bg-[#E1E7EB] flex flex-col px-20 pt-28 pb-32 gap-y-32">
