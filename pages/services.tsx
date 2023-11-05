@@ -1,22 +1,146 @@
-import { Inter } from "next/font/google";
 import Image from "next/image";
 import Image1 from "@/assets/img/service-image1.jpeg";
 import Image2 from "@/assets/img/service-image2.jpeg";
 import Image3 from "@/assets/img/service-image3.jpeg";
+import Image4 from "@/assets/img/service-image-4.jpeg";
 import Soundwave from "@/assets/img/service-soundwave.svg";
 import Underline from "@/assets/img/service-underline.svg";
 import Dashedline from "@/assets/img/line.svg";
 import RectangleR from "@/assets/img/rectangle-right.svg";
 import RectangleL from "@/assets/img/rectangle-left.svg";
 import Forest from "@/assets/img/forest.svg";
-import { MOHAVE_FONT } from "@/styles/fonts";
+import MagnifierIcon from "@/assets/icon/material-symbols-light_search.svg";
+import FilterList from "@/assets/icon/filter_list.svg";
+import ReadyIcon from "@/assets/icon/ready.svg";
+import OnProgressIcon from "@/assets/icon/progress.svg";
+import { INTER_FONT, MOHAVE_FONT } from "@/styles/fonts";
 import Head from "next/head";
 
-const INTER_FONT = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400"],
-  style: ["normal"],
-});
+const SERVICES_DATA = [
+  {
+    type: "package",
+    pill: "Dataset Package A",
+    image_src: Image2,
+    datasets: [
+      "Water Level Dataset",
+      "Solar Irradiance Dataset",
+      "Wind Profile Dataset",
+    ],
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "ready",
+  },
+  {
+    type: "package",
+    pill: "Dataset Package B",
+    image_src: Image2,
+    datasets: [
+      "Water Level Dataset",
+      "Solar Irradiance Dataset",
+      "Wind Profile Dataset",
+      "Temporary Dataset",
+      "Lorem Dataset",
+    ],
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "ready",
+  },
+  {
+    type: "package",
+    pill: "Dataset Package C",
+    image_src: Image2,
+    datasets: [
+      "Water Level Dataset",
+      "Solar Irradiance Dataset",
+      "Wind Profile Dataset",
+      "Temporary Dataset",
+      "Lorem Dataset",
+      "Ipsum Dataset",
+    ],
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "ready",
+  },
+  {
+    type: "dataset",
+    pill: "Solar Irradiance Dataset",
+    image_src: Image2,
+    rows_number: 27127,
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "onprogress",
+  },
+  {
+    type: "dataset",
+    pill: "Water Level Dataset",
+    image_src: Image2,
+    rows_number: 27127,
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "onprogress",
+  },
+  {
+    type: "dataset",
+    pill: "Wind Profile Dataset",
+    image_src: Image2,
+    rows_number: 27127,
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "onprogress",
+  },
+  {
+    type: "dataset",
+    pill: "Solar Irradiance Dataset",
+    image_src: Image2,
+    rows_number: 27127,
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "ready",
+  },
+  {
+    type: "dataset",
+    pill: "Water Level Dataset",
+    image_src: Image2,
+    rows_number: 27127,
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "ready",
+  },
+  {
+    type: "dataset",
+    pill: "Wind Profile Dataset",
+    image_src: Image2,
+    rows_number: 27127,
+    price: 500000,
+    title: "B2B Information Sales List - Marketing and Advertising Industry",
+    description:
+      "We provide a comprehensive database of renewable energy resources in Indonesia, down to the village and district level. This data can be used to identify potential project sites, assess feasibility, and forecast performance.",
+    status: "ready",
+  },
+];
+
+const toRupiah = (number: number) => {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(number);
+};
 
 export default function Services() {
   return (
@@ -58,7 +182,11 @@ export default function Services() {
         <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-8 z-10">
           <div className="row-start-1 row-end-3 col-start-1 col-end-2 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col justify-between gap-y-12 border border-[#BAC8D1]">
             <div className="flex flex-col items-start gap-y-8">
-              <Image className="w-full max-w-xl rounded-md" src={Image1} alt="image1" />
+              <Image
+                className="w-full max-w-xl rounded-md"
+                src={Image1}
+                alt="image1"
+              />
               <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
                 Data Insight
               </button>
@@ -78,8 +206,12 @@ export default function Services() {
             </div>
           </div>
           <div className="row-start-1 row-end-2 col-start-2 col-end-3 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col gap-y-12 border border-[#BAC8D1]">
-            <div className="flex gap-x-6">
-              <Image className="w-full max-w-[15rem] rounded-md" src={Image2} alt="image2" />
+            <div className="flex items-start gap-x-6">
+              <Image
+                className="w-full max-w-[15rem] rounded-md"
+                src={Image2}
+                alt="image2"
+              />
               <div className="flex flex-col items-start justify-between">
                 <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
                   Analytics
@@ -100,8 +232,12 @@ export default function Services() {
             </div>
           </div>
           <div className="row-start-2 row-end-3 col-start-2 col-end-3 bg-[#E8EDF0] px-6 pt-4 pb-6 flex flex-col gap-y-12 border border-[#BAC8D1]">
-            <div className="flex gap-x-6">
-              <Image className="w-full max-w-[15rem]" src={Image3} alt="image2" />
+            <div className="flex items-start gap-x-6">
+              <Image
+                className="w-full max-w-[15rem]"
+                src={Image3}
+                alt="image2"
+              />
               <div className="flex flex-col items-start justify-between">
                 <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
                   Consulting
@@ -122,6 +258,80 @@ export default function Services() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full flex flex-col gap-y-24 justify-between bg-black p-20">
+        <div className="flex flex-col gap-y-3">
+          <p
+            className={`${MOHAVE_FONT.className} font-semibold text-[#F0F3F5] text-5xl`}
+          >
+            Market Data
+          </p>
+          <p className="text-xl text-[#F0F3F5]">
+            Check out our data and get ahead
+          </p>
+        </div>
+        <div className="flex gap-x-4">
+          <div className="flex border-b pb-2 max-w-lg">
+            <Image src={MagnifierIcon} alt="magnifier" />
+            <input
+              className="bg-transparent italic focus:not-italic outline-none text-[#A3B6C2] w-60"
+              placeholder="Search what you're looking for here"
+            />
+          </div>
+          <div className="flex border-b pb-2">
+            <Image src={FilterList} alt="filterList" />
+            <select className="bg-transparent outline-none min-w-[6rem] text-[#A3B6C2]">
+              <option value=""></option>
+              <option value="ready">Ready</option>
+              <option value="onprogress">Onprogress</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div className="w-full bg-[#F2F4F6] grid grid-cols-3 gap-6 p-20">
+        {SERVICES_DATA.map((data) => (
+          <div
+            key={`${data.pill}-${data.status}`}
+            className="w-full flex flex-col gap-y-4 col-span-1 bg-[#E8EDF0] border border-[#BAC8D1] rounded-md p-4"
+          >
+            <div className="flex justify-between">
+              <p
+                className={`${
+                  data.type == "package"
+                    ? "bg-[#CCC1F2]"
+                    : "bg-transparent"
+                } font-bold text-lg rounded-full px-6 py-1`}
+              >
+                {data.pill}
+              </p>
+              <Image
+                src={
+                  data.status == "ready"
+                    ? ReadyIcon
+                    : OnProgressIcon
+                }
+                alt="status_logo"
+              />
+            </div>
+            <Image src={Image4} className="w-full rounded-lg" alt="image" />
+            <div className="flex text-lg gap-x-6">
+              {data.type == "package" ? (
+                <div>Datasets: {data.datasets?.length}</div>
+              ) : (
+                <div>Rows: {data.rows_number}</div>
+              )}
+              <p className="font-medium">|</p>
+              <p className="font-bold text-[#6747D9]">
+                {toRupiah(data.price).slice(0, -3)}
+              </p>
+            </div>
+            <div className="h-0 w-full border border-[#ABBCC7]" />
+            <p className={`${MOHAVE_FONT.className} font-semibold text-2xl`}>
+              {data.title}
+            </p>
+            <p>{data.description}</p>
+          </div>
+        ))}
       </div>
       <div className="relative w-full overflow-hidden bg-[#E1E7EB] flex flex-col px-20 pt-28 pb-32 gap-y-32">
         <Image
