@@ -318,7 +318,7 @@ export default function Services() {
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#F2F4F6] grid grid-cols-3 gap-6 p-20">
+      <div className="w-full bg-[#F2F4F6] grid grid-cols-3 gap-x-6 gap-y-12 p-20">
         {showed.map((data) => (
           <div
             key={`${data.pill}-${data.status}`}
