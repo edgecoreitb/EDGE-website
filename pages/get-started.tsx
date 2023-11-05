@@ -4,8 +4,13 @@ import CallIcon from "@/assets/icon/call.svg";
 import MailIcon from "@/assets/icon/mail.svg";
 import BG from "@/assets/img/get-started-bg.svg";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 
 export default function GetStarted() {
+  const searchParams = useSearchParams();
+  const item = searchParams.get("item");
+  console.log(item)
   return (
     <>
       <Head>
@@ -95,7 +100,7 @@ export default function GetStarted() {
                   name="Services"
                   form="get-started"
                 >
-                  <option value="Data Insight">Data Insight</option>
+                  <option value="Data Collection">Data Collection</option>
                   <option value="Analytics">Analytics</option>
                   <option value="Consulting">Consulting</option>
                 </select>
@@ -114,6 +119,7 @@ export default function GetStarted() {
               <textarea
                 className="border border-[#6B7B8D] h-40 rounded-[0.25rem] py-[0.375rem] px-3"
                 name="Messages"
+                value={item ? `Buy ${item}`: ""}
                 required
               />
             </div>

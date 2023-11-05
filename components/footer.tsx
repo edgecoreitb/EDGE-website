@@ -45,7 +45,7 @@ export default function Footer() {
               Data Collections
             </Link>
             <Link href="#" className="text-[#5D5D5D]">
-              Data Insights
+              Data Collections
             </Link>
             <Link href="#" className="text-[#5D5D5D]">
               Consultation
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col justify-between">
             <Link href="#" className="text-[#E8EDF0] font-bold">
-              Data Insight
+              Data Collection
             </Link>
             <Link href="#" className="text-[#5D5D5D]">
               Water Level

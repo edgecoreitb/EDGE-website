@@ -54,7 +54,7 @@ export default function Home() {
         <div className="row-span-1 col-start-1 col-end-3 flex justify-between z-10">
           <div className="flex justify-between items-center gap-x-4">
             <Image src={Data} alt="data" />
-            <p className="text-[#2A2A2A] text-lg">Data Insight</p>
+            <p className="text-[#2A2A2A] text-lg">Data Collection</p>
             <Image className="w-7" src={Arrow} alt="arrow" />
           </div>
           <div className="flex justify-between items-center gap-x-4">

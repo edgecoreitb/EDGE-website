@@ -16,6 +16,7 @@ import OnProgressIcon from "@/assets/icon/progress.svg";
 import { INTER_FONT, MOHAVE_FONT } from "@/styles/fonts";
 import Head from "next/head";
 import { ChangeEvent, useState } from "react";
+import Link from "next/link";
 
 const SERVICES_DATA = [
   {
@@ -211,7 +212,7 @@ export default function Services() {
                 alt="image1"
               />
               <button className="bg-[#F3F6F7] px-6 py-1 text-lg text-[#2A2A2A] rounded-full">
-                Data Insight
+                Data Collection
               </button>
             </div>
             <div className="flex flex-col gap-y-2">
@@ -317,7 +318,13 @@ export default function Services() {
       </div>
       <div className="w-full bg-[#F2F4F6] grid grid-cols-3 gap-6 p-20">
         {showed.map((data) => (
-          <div
+          <Link
+          href={{
+            pathname: 'get-started',
+            query: {
+              item: data.pill
+            }
+          }}
             key={`${data.pill}-${data.status}`}
             className="w-full flex flex-col gap-y-4 col-span-1 bg-[#E8EDF0] border border-[#BAC8D1] rounded-md p-4 transition ease-in-out delay-100 hover:scale-105 hover:shadow hover:border-[#4C4C4C] duration-300 cursor-pointer"
           >
@@ -351,7 +358,7 @@ export default function Services() {
               {data.title}
             </p>
             <p>{data.description}</p>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="relative w-full overflow-hidden bg-[#E1E7EB] flex flex-col px-20 pt-28 pb-32 gap-y-32">
