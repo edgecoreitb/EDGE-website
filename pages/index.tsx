@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link'
 import Arrow from "@/assets/icon/arrow.svg";
 import ArrowLight from "@/assets/icon/arrow_light.svg";
 import Data from "@/assets/icon/data.svg";
@@ -364,12 +365,12 @@ export default function Home() {
                 unleashing your full potential.
               </p>
               <div className="flex gap-x-6">
-                <button className="flex items-center gap-x-3 bg-[#191919] border border-[#5D5D5D] px-6 py-2 rounded-full">
+                <Link href="https://fadillahazhar7.users.earthengine.app/view/wind-energy-potential-indonesia" prefetch={true} passHref target='_blank' className="flex items-center gap-x-3 bg-[#191919] border border-[#5D5D5D] px-6 py-2 rounded-full">
                   <p className="text-[#F0F3F5] text-lg">
                     Get Access to Our Data
                   </p>
                   <Image className="w-7" src={ArrowLight} alt="arrow" />
-                </button>
+                </Link>
                 <button className="flex items-center gap-x-3 bg-[#F7F8F9] border border-[#5D5D5D] px-6 py-2 rounded-full">
                   <p className="text-[#191919] text-lg">
                     Book for Consultation
