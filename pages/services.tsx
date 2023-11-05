@@ -12,7 +12,6 @@ import Forest from "@/assets/img/forest.svg";
 import MagnifierIcon from "@/assets/icon/material-symbols-light_search.svg";
 import FilterList from "@/assets/icon/filter_list.svg";
 import ReadyIcon from "@/assets/icon/ready.svg";
-import OnProgressIcon from "@/assets/icon/progress.svg";
 import ArrowDropDown from "@/assets/icon/arrow_drop_down.svg";
 import { INTER_FONT, MOHAVE_FONT } from "@/styles/fonts";
 import Head from "next/head";
@@ -336,10 +335,9 @@ export default function Services() {
                   </span>
                 </div>
               )}
-              <Image
-                src={data.status == "ready" ? ReadyIcon : OnProgressIcon}
-                alt="status_logo"
-              />
+              {data.status == "ready" && (
+                <Image src={ReadyIcon} alt="status_logo" />
+              )}
             </div>
             <Link
               href={{
